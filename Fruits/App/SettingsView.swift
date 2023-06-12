@@ -22,15 +22,19 @@ struct SettingsView: View {
                     
                     GroupBox(
                         label:
-                            HStack {
-                                Text("Fruits".uppercased()).fontWeight(.bold)
-                                Spacer()
-                                Image(systemName: "info.circle")
-                            })
-                    {
-                        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                            SettingsLabelView(labelText: "Fruits", labelImage: "info.circle")
+                    ) {
+                        Divider().padding(.vertical, 4)
+                        HStack(alignment: .center, spacing: 10) {
+                            Image("logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(9)
+                            Text("Most fruits are naturally low in fat, sodium, and calories. None have cholesterol. Fruits are sources of many essential nturients, including potassium, dietary fiber, vitamins, and much more.")
+                                .font(.footnote)
+                        }
                     }
-                    
                     
                     //MARK: - SECTION 2
                     
